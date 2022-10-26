@@ -1,0 +1,163 @@
+The ``1-my_list`` module
+
+============================
+
+
+
+Using ``1-mylist``
+
+---------------------
+
+
+
+Import function from module:
+
+    	>>> MyList = __import__('1-my_list').MyList
+
+
+
+
+
+Intranet example test 1:
+
+	>>> my_list = MyList()
+
+	>>> my_list.append(1)
+
+	>>> my_list.append(4)
+
+	>>> my_list.append(2)
+
+	>>> my_list.append(3)
+
+	>>> my_list.append(5)
+
+	>>> print(my_list)
+
+	[1, 4, 2, 3, 5]
+
+
+
+Intranet example test 2:
+
+	>>> my_list = MyList()
+
+	>>> my_list.append(1)
+
+	>>> my_list.append(4)
+
+	>>> my_list.append(2)
+
+	>>> my_list.append(3)
+
+	>>> my_list.append(5)
+
+	>>> my_list.print_sorted()
+
+	[1, 2, 3, 4, 5]
+
+
+
+Correct Class Type test:
+
+    	>>> ml = MyList()
+
+    	>>> type(ml) == MyList
+
+    	True
+
+
+
+Correct Instance test:
+
+    	>>> ml = MyList()
+
+    	>>> isinstance(ml, list)
+
+    	True
+
+
+
+print_sorted method is an instance method:
+
+    	>>> type(MyList.__dict__['print_sorted'])
+
+    	<class 'function'>
+
+
+
+print_sorted method called with 1 arg:
+
+	>>> ml = MyList()
+
+    	>>> ml.print_sorted([4, 2, 5])
+
+    	Traceback (most recent call last):
+
+    	TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+
+
+print_sorted method called with 2 args:
+
+	>>> ml = MyList()
+
+    	>>> ml.print_sorted([4, 2, 5], 1)
+
+    	Traceback (most recent call last):
+
+    	TypeError: print_sorted() takes 1 positional argument but 3 were given
+
+
+
+Empty list test:
+
+    	>>> ml = MyList()
+
+    	>>> ml.print_sorted()
+
+    	[]
+
+
+
+Normal list test:
+
+    	>>> ml = MyList([6, 16, 2])
+
+    	>>> ml.print_sorted()
+
+    	[2, 6, 16]
+
+
+
+Negative ints list test:
+
+    	>>> ml = MyList([-1000, -98, -232565, 0, -23423434, -123])
+
+    	>>> ml.print_sorted()
+
+    	[-23423434, -232565, -1000, -123, -98, 0]
+
+
+
+Original list unchanged:
+
+    	>>> ml = MyList([2, 10, 1, -10, 20, 100, 0])
+
+    	>>> ml.print_sorted()
+
+    	[-10, 0, 1, 2, 10, 20, 100]
+
+    	>>> ml
+
+    	[2, 10, 1, -10, 20, 100, 0]
+
+
+
+List already in order:
+
+	>>> ml = MyList([-20, -10, 0, 10, 20])
+
+	>>> ml.print_sorted()
+
+	[-20, -10, 0, 10, 20]
